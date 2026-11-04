@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://contractor-bill.niveshsahayak.in/sitemap.xml
