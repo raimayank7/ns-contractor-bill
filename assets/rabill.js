@@ -93,6 +93,7 @@
     shareText: function (d, o) { return '\nWork: ' + (d.work || '') + '\nNet payable: ' + NS.money(o.net); },
     sheet: function (d, o, K) {
       var b = d.buyer, title = d.final ? 'FINAL BILL' : 'RUNNING ACCOUNT BILL No. ' + esc(d.raNo || '');
+      if (o.g) title = 'TAX INVOICE (' + title + ')';   /* GST charged: Rule 46(a) needs the words "Tax invoice" */
       var meta = [['Bill No.', '<span class="mono">' + esc(d.no) + '</span>'], ['Date', NS.fmtDate(d.date)], ['Name of work', esc(d.work)], d.site ? ['Site', esc(d.site)] : null,
         d.wo ? ['Work order / agreement', esc(d.wo) + (d.woDate ? ' dated ' + NS.fmtDate(d.woDate) : '')] : null, ['Work done', (d.from ? NS.fmtDate(d.from) + ' to ' : 'up to ') + NS.fmtDate(d.to)]];
       var m = function (v) { return v ? NS.money(v, false) : ''; }, q = function (v) { return num(v) ? NS.qty(num(v)) : ''; };
