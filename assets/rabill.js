@@ -1,6 +1,6 @@
 /* contractor-bill.niveshsahayak.in: running account (RA) bill for contractors. BOQ items with previous, this-bill and cumulative
    quantities and amounts, works-contract GST on this bill, and the usual deductions (retention / security deposit, income-tax TDS,
-   GST TDS for government clients, advance recovery). Record type 'rabill'; this bill's value is a sale in the Nivesh Sahayak App.
+   GST TDS for government clients, advance recovery). Record type 'rabill'; this bill's value is a sale in NSBiz.
    "Next RA bill" moves this bill's quantities into "previous" for the next one. */
 (function () {
   'use strict';
