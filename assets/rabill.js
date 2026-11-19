@@ -83,7 +83,7 @@
     },
     copyOf: function (d) {
       d.boqs.forEach(function (b) { b.prev = String(r2(num(b.prev) + num(b.qty))); b.qty = ''; });
-      d.raNo = String((+d.raNo || 0) + 1); d.from = d.to || ''; d.to = NS.today(); d.advRec = ''; d.matRec = ''; d.othDed = ''; d.othNote = ''; d.final = false;
+      d.raNo = String((+d.raNo || 0) + 1); d.from = d.to ? new Date(Date.parse(d.to + 'T00:00:00Z') + 864e5).toISOString().slice(0, 10) : '';   /* the day after (F6-15) */ d.to = NS.today(); d.advRec = ''; d.matRec = ''; d.othDed = ''; d.othNote = ''; d.final = false;
     },
     copyLbl: 'ra.next',
     histName: function (d) { return (d.final ? 'Final' : 'RA ' + (d.raNo || '')) + ' · ' + (d.work || '') + ' · ' + (d.buyer && d.buyer.name || ''); },
