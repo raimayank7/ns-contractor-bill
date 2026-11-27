@@ -32,7 +32,7 @@
   }
 
   NS.kit({
-    type: 'rabill', prefix: 'RA', digits: 3, paper: 'a4', papers: ['a4'], party: 'customer',
+    type: 'rabill', prefix: 'RA', digits: 3, paper: 'a4', papers: NS.PAPER_ALL, party: 'customer',
     name: function (d) { return d.final ? 'Final Bill' : 'RA Bill ' + (d.raNo || ''); },
     blank: function () { return { raNo: '1', final: false, work: '', wo: '', woDate: '', site: '', from: '', to: NS.today(), gst: '18', gstOther: '', retPct: '5', tdsPct: '', gtds: false, advRec: '', matRec: '', othDed: '', othNote: '', boqs: [row()] }; },
     newRow: function () { return row(); },
